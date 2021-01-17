@@ -8,12 +8,13 @@ int power(int n , int p){
         return 1;
     }
     int k = power(n,p/2);
-    if(k%2 == 0){
+    if(p%2 == 0){
         return k*k;
     }else
     {
         return k*k*n;
     }
+    
     
 }
 int main(){
