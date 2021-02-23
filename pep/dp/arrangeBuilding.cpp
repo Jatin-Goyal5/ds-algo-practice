@@ -1,22 +1,22 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-int fib(int n){
-    // write your code here
-    vector<int> dp(n+1);
-    dp[1] =1;
-    dp[0]=0;
-    for(int i =2 ; i <= n ; i++){
-        dp[i] = dp[i-1]+ dp[i-2];
+long count(int n){
+    if(n == 0 ){
+        return 0;
     }
-    
-
-    return dp[n];
+    long a =1,b=1;
+    for(int i =1 ; i <n; i++)
+    {
+        long c=a+b;
+        a=b;
+        b = c;
+    }
+    long ans = a+b;
+    return ans*ans;
 }
-
 int main(){
     int n;
-    cin>>n;
-    cout<<fib(n)<<endl;
-    return 0;
+    cin>> n;
+    cout<< count(n);
+    
 }
